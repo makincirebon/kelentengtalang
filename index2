@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="MAKIN Cirebon - Kelenteng Talang">
+    <meta property="og:description" content="Menjaga ajaran Ru Jiao, merawat budaya leluhur, dan melayani umat.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548625361-1b2db4753094?q=80&w=1000&auto=format&fit=crop">
+    
+    <title>MAKIN Cirebon - Kelenteng Talang</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Playfair+Display:wght@600;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Colors & Styles */
+        :root {
+            --temple-red: #7f1d1d; 
+            --temple-gold: #d4af37; 
+            --bg-cream: #fdfbf7; 
+        }
+        
+        body {
+            background-color: var(--bg-cream);
+            /* Pola latar belakang halus */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            font-family: 'Lato', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, .chinese-text { font-family: 'Playfair Display', serif; }
+        .chinese-char { font-family: 'Noto Serif SC', serif; }
+
+        .btn-main {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(127, 29, 29, 0.1);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(127, 29, 29, 0.1), 0 4px 6px -2px rgba(127, 29, 29, 0.05);
+            border-color: var(--temple-red);
+        }
+
+        /* Divider Style */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--temple-red);
+            margin: 2rem 0 1rem;
+            opacity: 0; /* Hidden initially for animation */
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+        .section-divider::before, .section-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .section-divider span {
+            padding: 0 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .animate-item {
+            opacity: 0;
+            animation: slideUpFade 0.6s ease-out forwards;
+        }
+        
+        /* Stagger delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex justify-center">
+
+    <div class="w-full max-w-md bg-white shadow-2xl min-h-screen flex flex-col relative overflow-hidden">
+            
+        <header class="bg-[#7f1d1d] text-white pt-10 pb-8 px-6 text-center rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
+        
+            <button onclick="shareLink()" class="absolute top-4 right-4 z-30 w-8 h-8 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                <i class="fa-solid fa-share-nodes text-white text-xs"></i>
+            </button>
+        
+            <div class="absolute inset-0 z-0 opacity-25 bg-center bg-cover bg-no-repeat mix-blend-multiply"
+                 style="background-image: url('https://images.unsplash.com/photo-1599709573867-078e5f29d10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+            </div>
+            
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-[#d4af37] z-20 shadow-md"></div>
+    
+            <div class="relative z-10 animate-item">
+                <div class="mb-4 relative group">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-[#d4af37] shadow-xl overflow-hidden relative z-10">
+                        <img src="https://github.com/makincirebon/kelentengtalang/blob/img/logo%20genta.png?raw=true" 
+                             alt="Logo MAKIN Cirebon" 
+                             class="w-full h-full object-contain p-1"> 
+                    </div>
+                    <div class="absolute inset-0 bg-[#d4af37] blur-xl opacity-20 rounded-full scale-110 -z-0"></div>
+                </div>
+    
+                <h1 class="text-xl font-bold tracking-wide mb-1 drop-shadow-sm">MAKIN CIREBON</h1>
+    
+                <p class="text-[#d4af37] text-sm font-serif mb-2">
+                    Kelenteng Talang • <span class="chinese-char font-normal">大人宫</span> <span class="text-xs italic text-[#d4af37]/80">(Dà Rén Gōng)</span>
+                </p>
+    
+                <div class="mb-5">
+                    <span class="border border-[#d4af37]/40 rounded-full px-3 py-1 text-[10px] text-gray-100 tracking-widest uppercase bg-[#7f1d1d]/40 backdrop-blur-sm shadow-sm">
+                        Cagar Budaya Kota Cirebon
+                    </span>
+                </div>
+                
+                <p class="text-xs font-light opacity-90 leading-relaxed max-w-xs mx-auto mb-6">
+                    Menjaga ajaran Ru Jiao (儒教), merawat budaya leluhur, dan melayani umat dengan kebajikan.
+                </p>
+    
+                <div class="flex justify-center gap-8 text-[#d4af37] chinese-char text-sm border-t border-white/10 pt-4 mx-6">
+                    <div class="flex flex-col items-center">
+                        <span class="text-lg font-bold">立德</span>
+                        <span class="text-[0.6rem] uppercase tracking-wider opacity-80 mt-1">Lì Dé</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-lg font-bold">立功</span>
+                        <span class="text-[0.6rem] uppercase tracking-wider opacity-80 mt-1">Lì Gōng</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-lg font-bold">立言</span>
+                        <span class="text-[0.6rem] uppercase tracking-wider opacity-80 mt-1">Lì Yán</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="flex-grow px-6 py-8 pb-12 space-y-4">
+
+            <div class="space-y-3">
+                
+                <a href="#profil" class="btn-main animate-item delay-100 block w-full bg-white text-gray-800 py-3 px-4 rounded-xl flex items-center group shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-red-50 text-[#7f1d1d] flex items-center justify-center group-hover:bg-[#7f1d1d] group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-yin-yang"></i>
+                    </div>
+                    <span class="ml-4 font-semibold text-sm">Profil MAKIN Cirebon</span>
+                    <i class="fa-solid fa-chevron-right ml-auto text-gray-300 text-xs group-hover:text-[#7f1d1d] transition-colors"></i>
+                </a>
+
+                <a href="#jadwal" class="btn-main animate-item delay-200 block w-full bg-white text-gray-800 py-3 px-4 rounded-xl flex items-center group shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-red-50 text-[#7f1d1d] flex items-center justify-center group-hover:bg-[#7f1d1d] group-hover:text-white transition-colors duration-300">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <div class="ml-4 text-left">
+                        <span class="block font-semibold text-sm">Jadwal Ibadah & Kegiatan</span>
+                        <span class="block text-[0.65rem] text-gray-500 mt-0.5">Jiang Dao, Sembahyang, Sekolah Minggu</span>
+                    </div>
+                </a>
+
+                <a href="https://maps.google.com/?q=Kelenteng+Talang+Cirebon" target="_blank" class="btn-main animate-item delay-300 block w-full bg-white text-gray-800 py-3 px-4 rounded-xl flex items-center group shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-red-50 text-[#7f1d1d] flex items-center justify-center group-hover:bg-[#7f1d1d] group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <span class="ml-4 font-semibold text-sm">Lokasi Kelenteng Talang</span>
+                </a>
+
+                <a href="https://wa.me/6281586201984" target="_blank" class="btn-main animate-item delay-400 block w-full bg-white text-gray-800 py-3 px-4 rounded-xl flex items-center group shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                    <span class="ml-4 font-semibold text-sm">Kontak Pengurus (WA)</span>
+                </a>
+
+                 <a href="#registrasi" class="btn-main animate-item delay-500 block w-full bg-white text-gray-800 py-3 px-4 rounded-xl flex items-center group shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-red-50 text-[#7f1d1d] flex items-center justify-center group-hover:bg-[#7f1d1d] group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <span class="ml-4 font-semibold text-sm">Registrasi Umat / Dao Ren</span>
+                </a>
+            </div>
+
+            <div class="mt-6 animate-item delay-600">
+                <div class="bg-gradient-to-r from-[#7f1d1d] to-[#b91c1c] rounded-xl p-1 shadow-lg transform hover:scale-[1.02] transition duration-300">
+                    <a href="https://forms.gle/LuMoJwiZ18TDoLzT9" class="block bg-white rounded-lg p-4 text-center hover:bg-red-50 transition relative overflow-hidden group">
+                        <i class="fa-solid fa-torii-gate absolute -right-4 -bottom-4 text-6xl text-gray-100 opacity-50 group-hover:text-red-100 group-hover:scale-110 transition"></i>
+                        
+                        <div class="text-[#d4af37] text-2xl mb-2 relative z-10"><i class="fa-solid fa-torii-gate"></i></div>
+                        <h3 class="font-bold text-[#7f1d1d] text-sm uppercase tracking-wide relative z-10">Request Kunjungan Resmi</h3>
+                        <p class="text-xs text-gray-500 mt-1 px-4 relative z-10">
+                            Untuk Sekolah, Komunitas, Media, atau Penelitian Budaya & Sejarah.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section-divider">
+                <span>Edukasi & Budaya</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 opacity-0" style="animation: slideUpFade 0.6s ease-out forwards; animation-delay: 0.9s;">
+                <a href="#sejarah" class="bg-white border border-gray-200 p-3 rounded-lg text-center hover:border-[#7f1d1d] hover:shadow-md transition shadow-sm group">
+                    <i class="fa-solid fa-landmark text-[#7f1d1d] mb-2 text-lg group-hover:scale-110 transition-transform"></i>
+                    <span class="block text-xs font-bold text-gray-700">Sejarah Talang</span>
+                </a>
+                <a href="#rujiao" class="bg-white border border-gray-200 p-3 rounded-lg text-center hover:border-[#7f1d1d] hover:shadow-md transition shadow-sm group">
+                    <i class="fa-solid fa-scroll text-[#7f1d1d] mb-2 text-lg group-hover:scale-110 transition-transform"></i>
+                    <span class="block text-xs font-bold text-gray-700">Ajaran Ru Jiao</span>
+                </a>
+                <a href="#artikel" class="bg-white border border-gray-200 p-3 rounded-lg text-center hover:border-[#7f1d1d] hover:shadow-md transition shadow-sm group">
+                    <i class="fa-solid fa-book-open-reader text-[#7f1d1d] mb-2 text-lg group-hover:scale-110 transition-transform"></i>
+                    <span class="block text-xs font-bold text-gray-700">Artikel & Renungan</span>
+                </a>
+                <a href="#event" class="bg-white border border-gray-200 p-3 rounded-lg text-center hover:border-[#7f1d1d] hover:shadow-md transition shadow-sm group">
+                    <i class="fa-solid fa-calendar-days text-[#7f1d1d] mb-2 text-lg group-hover:scale-110 transition-transform"></i>
+                    <span class="block text-xs font-bold text-gray-700">Event & Perayaan</span>
+                </a>
+            </div>
+
+            <div class="mt-8 space-y-3 opacity-0" style="animation: slideUpFade 0.6s ease-out forwards; animation-delay: 1s;">
+                <a href="#donasi" class="block w-full bg-[#fdfbf7] border border-dashed border-[#d4af37] text-gray-600 py-3 rounded-lg text-center text-xs hover:bg-[#fffbeb] transition hover:border-solid">
+                    <i class="fa-solid fa-hand-holding-heart mr-1 text-[#d4af37]"></i> Donasi Pemeliharaan Kelenteng
+                </a>
+                
+                <div class="flex justify-center gap-2">
+                    <a href="#presskit" class="text-[10px] text-gray-400 hover:text-[#7f1d1d] underline">Media Kit</a>
+                    <span class="text-[10px] text-gray-300">•</span>
+                    <a href="#galeri" class="text-[10px] text-gray-400 hover:text-[#7f1d1d] underline">Galeri Sejarah</a>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="bg-gray-50 py-6 text-center border-t border-gray-100 z-10">
+            <div class="flex justify-center space-x-6 mb-3 text-[#7f1d1d]">
+                <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+            <p class="text-[10px] text-gray-400 leading-normal">
+                © 2025 MAKIN Cirebon. All Rights Reserved.<br>
+                Di Empat Penjuru Lautan, Semuanya Saudara<br>
+                <span class="chinese-char font-bold text-gray-500">(四海之内皆兄弟)</span>
+            </p>
+        </footer>
+
+    </div>
+    
+    <script>
+        // Fitur Share Native
+        function shareLink() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'MAKIN Cirebon - Kelenteng Talang',
+                    text: 'Kunjungi Bio Link Resmi MAKIN Cirebon & Kelenteng Talang',
+                    url: window.location.href,
+                })
+                .then(() => console.log('Berhasil dibagikan'))
+                .catch((error) => console.log('Gagal membagikan', error));
+            } else {
+                alert('Silakan salin link URL di browser Anda untuk membagikan.');
+            }
+        }
+    </script>
+
+</body>
+</html>
